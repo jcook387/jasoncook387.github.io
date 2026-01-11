@@ -1,55 +1,28 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- ========================================
-       META INFORMATION
-       ======================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jason Cook | Portfolio</title>
   <meta name="description" content="Personal portfolio website showcasing projects, skills, and contact information." />
 
-  <!-- ========================================
-       BOOTSTRAP CSS FRAMEWORK
-       This provides pre-built responsive components
-       ======================================== -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   
-  <!-- ========================================
-       BOOTSTRAP ICONS
-       Provides professional icon library
-       ======================================== -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
   
-  <!-- ========================================
-       CUSTOM CSS
-       Our own styles to customize Bootstrap
-       ======================================== -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- ========================================
-       SKIP LINK FOR ACCESSIBILITY
-       Allows keyboard users to skip navigation
-       ======================================== -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ========================================
-       HEADER & NAVIGATION BAR
-       sticky-top makes navbar stay at top when scrolling
-       ======================================== -->
   <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
-        <!-- Logo/Brand -->
         <a class="navbar-brand d-flex align-items-center" href="#home" aria-label="Go to Home">
           <span class="logo-mark me-2" aria-hidden="true">JC</span>
           <span class="logo-text">Jason Cook</span>
         </a>
 
-        <!-- Mobile Menu Toggle Button (Hamburger) 
-             Only shows on small screens
-        -->
         <button
           class="navbar-toggler"
           type="button"
@@ -62,9 +35,6 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navigation Links
-             Collapses into hamburger menu on mobile
-        -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -88,22 +58,12 @@
     </nav>
   </header>
 
-  <!-- ========================================
-       MAIN CONTENT AREA
-       Contains all the sections of the page
-       ======================================== -->
   <main id="main">
     
-    <!-- ========================================
-         HOME/HERO SECTION
-         First thing visitors see
-         ======================================== -->
     <section id="home" class="hero-section" aria-labelledby="home-title">
       <div class="container">
-        <!-- Bootstrap Grid: 2 columns on large screens, stacks on mobile -->
         <div class="row align-items-center g-4">
           
-          <!-- Left Column: Text Content -->
           <div class="col-lg-7">
             <h1 id="home-title" class="display-4 fw-bold mb-3">Hi, I'm Jason Cook.</h1>
             <p class="lead mb-3">
@@ -114,7 +74,6 @@
               This site highlights a few projects, my core skills, and how to reach me.
             </p>
             
-            <!-- Call-to-Action Buttons -->
             <div class="d-flex gap-3 flex-wrap">
               <a class="btn btn-primary btn-lg" href="#projects">
                 <i class="bi bi-folder me-2"></i>View Projects
@@ -125,7 +84,6 @@
             </div>
           </div>
           
-          <!-- Right Column: Profile Photo -->
           <div class="col-lg-5 text-center">
             <img
               src="img/me.jpg"
@@ -140,18 +98,12 @@
       </div>
     </section>
 
-    <!-- ========================================
-         ABOUT ME SECTION
-         Background information and interests
-         ======================================== -->
     <section id="about" class="py-5 bg-light" aria-labelledby="about-title">
       <div class="container">
         <h2 id="about-title" class="display-5 fw-bold mb-4">About Me</h2>
 
-        <!-- Two-column layout on tablets and larger -->
         <div class="row g-4">
           
-          <!-- Left Column: Background & Interests -->
           <div class="col-md-6">
             <h3 class="h4 mb-3">Background</h3>
             <p>
@@ -160,7 +112,6 @@
             </p>
 
             <h3 class="h4 mb-3 mt-4">Interests</h3>
-            <!-- list-unstyled removes bullet points -->
             <ul class="list-unstyled">
               <li class="mb-2">
                 <i class="bi bi-check-circle-fill text-primary me-2"></i>
@@ -177,12 +128,10 @@
             </ul>
           </div>
 
-          <!-- Right Column: Quick Facts Card -->
           <div class="col-md-6">
             <div class="card h-100 shadow-sm">
               <div class="card-body">
                 <h3 class="card-title h4 mb-4">Quick Facts</h3>
-                <!-- Definition List (dl/dt/dd) for key-value pairs -->
                 <dl class="row mb-0">
                   <dt class="col-sm-4 fw-bold">Focus</dt>
                   <dd class="col-sm-8">Web apps, automation, reporting</dd>
@@ -200,10 +149,6 @@
       </div>
     </section>
 
-    <!-- ========================================
-         PROJECTS SECTION
-         Showcase of completed work
-         ======================================== -->
     <section id="projects" class="py-5" aria-labelledby="projects-title">
       <div class="container">
         <h2 id="projects-title" class="display-5 fw-bold mb-3">Projects</h2>
@@ -211,35 +156,28 @@
           A few examples of work. Each project includes a clear description and descriptive links.
         </p>
 
-        <!-- Grid: 1 column on mobile, 2 on tablet, 3 on desktop -->
         <div class="row g-4">
           
-          <!-- PROJECT CARD 1: System Request Tracker -->
           <div class="col-md-6 col-lg-4">
             <article class="card h-100 shadow-sm project-card">
-              <!-- Project Screenshot -->
               <img
                 src="img/SRT.png"
                 alt="Screenshot of System Request Tracker dashboard showing a table of support tickets with status columns"
                 class="card-img-top"
                 loading="lazy"
               />
-              <!-- Card Body with Project Details -->
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title h5">System Request Tracker</h3>
                 <p class="card-text">
                   A ticketing web app that supports request submission, approvals, role-based views, and
                   audit-friendly workflows.
                 </p>
-                <!-- mt-auto pushes this content to bottom of card -->
                 <div class="mt-auto">
-                  <!-- Technology Badges -->
                   <div class="mb-3">
                     <span class="badge bg-secondary me-1">CFML</span>
                     <span class="badge bg-secondary me-1">SQL</span>
                     <span class="badge bg-secondary">MVC</span>
                   </div>
-                  <!-- Link to Project -->
                   <a href="https://github.com/jasoncook387" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
                     <i class="bi bi-github me-1"></i>View Source Code
                   </a>
@@ -248,7 +186,6 @@
             </article>
           </div>
 
-          <!-- PROJECT CARD 2: Weather Forecast Site -->
           <div class="col-md-6 col-lg-4">
             <article class="card h-100 shadow-sm project-card">
               <img
@@ -276,7 +213,6 @@
             </article>
           </div>
 
-          <!-- PROJECT CARD 3: Portfolio Website -->
           <div class="col-md-6 col-lg-4">
             <article class="card h-100 shadow-sm project-card">
               <img
@@ -308,25 +244,18 @@
       </div>
     </section>
 
-    <!-- ========================================
-         SKILLS SECTION
-         Technical and non-technical abilities
-         ======================================== -->
     <section id="skills" class="py-5 bg-light" aria-labelledby="skills-title">
       <div class="container">
         <h2 id="skills-title" class="display-5 fw-bold mb-5">Skills</h2>
 
-        <!-- Two-column layout for skills categories -->
         <div class="row g-4">
           
-          <!-- TECHNICAL SKILLS CARD -->
           <div class="col-lg-6">
             <div class="card h-100 shadow-sm">
               <div class="card-body">
                 <h3 class="card-title h4 mb-4">
                   <i class="bi bi-code-slash text-primary me-2"></i>Technical
                 </h3>
-                <!-- Bootstrap List Group for structured skill list -->
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     <span>HTML (Semantic)</span>
@@ -353,7 +282,6 @@
             </div>
           </div>
 
-          <!-- NON-TECHNICAL SKILLS CARD -->
           <div class="col-lg-6">
             <div class="card h-100 shadow-sm">
               <div class="card-body">
@@ -385,10 +313,6 @@
       </div>
     </section>
 
-    <!-- ========================================
-         CONTACT SECTION
-         Form and contact information
-         ======================================== -->
     <section id="contact" class="py-5" aria-labelledby="contact-title">
       <div class="container">
         <h2 id="contact-title" class="display-5 fw-bold mb-3">Contact</h2>
@@ -398,14 +322,11 @@
 
         <div class="row g-4">
           
-          <!-- CONTACT FORM (Left Column) -->
           <div class="col-lg-7">
             <div class="card shadow-sm">
               <div class="card-body">
-                <!-- novalidate prevents browser's default validation so we can use custom JavaScript validation -->
                 <form id="contactForm" novalidate>
                   
-                  <!-- NAME INPUT -->
                   <div class="mb-3">
                     <label for="name" class="form-label">
                       Name <span class="text-danger" aria-label="required">*</span>
@@ -420,11 +341,9 @@
                       aria-required="true"
                       aria-describedby="nameError"
                     />
-                    <!-- Error message (hidden by default, shown by JavaScript) -->
                     <div class="invalid-feedback" id="nameError" role="alert" aria-live="polite"></div>
                   </div>
 
-                  <!-- EMAIL INPUT -->
                   <div class="mb-3">
                     <label for="email" class="form-label">
                       Email <span class="text-danger" aria-label="required">*</span>
@@ -442,7 +361,6 @@
                     <div class="invalid-feedback" id="emailError" role="alert" aria-live="polite"></div>
                   </div>
 
-                  <!-- MESSAGE TEXTAREA -->
                   <div class="mb-3">
                     <label for="message" class="form-label">
                       Message <span class="text-danger" aria-label="required">*</span>
@@ -459,12 +377,10 @@
                     <div class="invalid-feedback" id="messageError" role="alert" aria-live="polite"></div>
                   </div>
 
-                  <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-primary btn-lg">
                     <i class="bi bi-send me-2"></i>Send Message
                   </button>
 
-                  <!-- SUCCESS MESSAGE (Hidden until form is successfully submitted) -->
                   <div class="alert alert-success mt-3 d-none" id="formSuccess" role="status" aria-live="polite">
                     <i class="bi bi-check-circle me-2"></i>
                     <span id="successMessage"></span>
@@ -474,13 +390,11 @@
             </div>
           </div>
 
-          <!-- CONTACT INFORMATION (Right Column) -->
           <div class="col-lg-5">
             <div class="card shadow-sm h-100">
               <div class="card-body">
                 <h3 class="card-title h5 mb-4">Other ways to reach me</h3>
                 
-                <!-- EMAIL -->
                 <div class="d-flex align-items-start mb-3">
                   <i class="bi bi-envelope-fill text-primary fs-4 me-3"></i>
                   <div>
@@ -491,7 +405,6 @@
                   </div>
                 </div>
 
-                <!-- GITHUB -->
                 <div class="d-flex align-items-start mb-3">
                   <i class="bi bi-github text-primary fs-4 me-3"></i>
                   <div>
@@ -502,7 +415,6 @@
                   </div>
                 </div>
 
-                <!-- LINKEDIN -->
                 <div class="d-flex align-items-start mb-3">
                   <i class="bi bi-linkedin text-primary fs-4 me-3"></i>
                   <div>
@@ -520,18 +432,12 @@
     </section>
   </main>
 
-  <!-- ========================================
-       FOOTER
-       Bottom of the page
-       ======================================== -->
   <footer class="bg-dark text-white py-4 mt-5">
     <div class="container">
       <div class="row align-items-center">
-        <!-- Copyright Notice -->
         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
           <p class="mb-0">&copy; <span id="year"></span> Jason Cook. All rights reserved.</p>
         </div>
-        <!-- Back to Top Link -->
         <div class="col-md-6 text-center text-md-end">
           <a href="#home" class="text-white text-decoration-none">
             <i class="bi bi-arrow-up-circle me-1"></i>Back to top
@@ -541,15 +447,8 @@
     </div>
   </footer>
 
-  <!-- ========================================
-       JAVASCRIPT FILES
-       Load at the end for better performance
-       ======================================== -->
-  
-  <!-- Bootstrap JavaScript (includes Popper.js) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   
-  <!-- Our Custom JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
