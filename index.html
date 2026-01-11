@@ -1,47 +1,320 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Home - Simple Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jason Cook | Portfolio</title>
+  <meta name="description" content="Personal portfolio website showcasing projects, skills, and contact information." />
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
-<body>
-  <nav>
-    <!-- These links allow the user to jump to any page from any page -->
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="schoolAndWorkHistory.html">School &amp; Work History</a> |
-    <a href="gallery.html">Gallery</a> |
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <hr>
-  <header>
-    <h1>Welcome to My Simple Website</h1>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <div class="nav__brand">
+        <a class="nav__logo" href="#home" aria-label="Go to Home">
+          <span class="nav__logoMark" aria-hidden="true">JC</span>
+          <span class="nav__logoText">Jason Cook</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu button (accessible) -->
+      <button
+        class="nav__toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span class="sr-only">Menu</span>
+        <span aria-hidden="true" class="nav__hamburger"></span>
+      </button>
+
+      <ul id="primary-navigation" class="nav__links">
+        <li><a href="#home" aria-current="page">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <!-- Brief intro -->
-    <p>
-      Hello! I'm Jason Cook, and welcome to my personal website.
-    </p>
-    <p>
-      Feel free to explore and learn more about me using the navigation links above.
-    </p>
+  <main id="main" class="site-main">
+    <!-- HOME -->
+    <section id="home" class="section hero" aria-labelledby="home-title">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <h1 id="home-title">Hi, I’m Jason Cook.</h1>
+          <p class="lead">
+            I’m a Software Developer / IT Analyst focused on building accessible, secure web applications.
+            I work with ColdFusion (CFML), SQL, and modern front-end development.
+          </p>
+          <p>
+            This site highlights a few projects, my core skills, and how to reach me.
+          </p>
 
-    <h2>What You’ll Find Here</h2>
-    <ul>
-      <li>Learn about my background and interests on the <a href="about.html">About</a> page</li>
-      <li>Explore my educational journey and career path in <a href="schoolAndWorkHistory.html">School & Work History</a></li>
-      <li>Browse through my favorite hobbies in the <a href="gallery.html">Gallery</a></li>
-      <li>Get in touch with me on the <a href="contact.html">Contact</a> page</li>
-    </ul>
+          <div class="hero__actions">
+            <a class="button" href="#projects">View Projects</a>
+            <a class="button button--secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <figure class="hero__media">
+          <img
+            src="../images/profile.jpg"
+            alt="Professional headshot of Jason Cook smiling in business casual attire."
+            width="480"
+            height="480"
+            loading="lazy"
+          />
+          <figcaption class="sr-only">Profile photo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About Me</h2>
+
+        <div class="grid grid--2">
+          <div>
+            <h3>Background</h3>
+            <p>
+              I enjoy building maintainable systems and clean user experiences. I’m especially interested
+              in accessible interfaces, structured MVC patterns, and reliable data flows.
+            </p>
+
+            <h3>Interests</h3>
+            <ul>
+              <li>Accessibility-first UI development</li>
+              <li>Backend services, automation, and SQL reporting</li>
+              <li>Responsive design and modern CSS layout</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">Quick Facts</h3>
+            <dl class="facts" role="list">
+              <div class="facts__row" role="listitem">
+                <dt>Focus</dt>
+                <dd>Web apps, automation, reporting</dd>
+              </div>
+              <div class="facts__row" role="listitem">
+                <dt>Tools</dt>
+                <dd>HTML/CSS/JS, SQL, ColdFusion</dd>
+              </div>
+              <div class="facts__row" role="listitem">
+                <dt>Strengths</dt>
+                <dd>Problem-solving, documentation, iteration</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section--alt" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+        <p class="section__intro">
+          A few examples of work. Each project includes a clear description and descriptive links.
+        </p>
+
+        <div class="grid grid--3">
+          <article class="project card">
+            <img
+              src="../images/project1.jpg"
+              alt="Screenshot of a ticket-tracking web app dashboard showing a table of requests."
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h3 class="card__title">System Request Tracker</h3>
+              <p>
+                A ticketing web app that supports request submission, approvals, role-based views, and
+                audit-friendly workflows.
+              </p>
+              <ul class="pill-list" aria-label="Project technologies">
+                <li>CFML</li><li>SQL</li><li>MVC</li>
+              </ul>
+              <p class="card__links">
+                <a href="https://github.com/" target="_blank" rel="noopener">
+                  View source code on GitHub
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <article class="project card">
+            <img
+              src="../images/project2.jpg"
+              alt="Screenshot of a responsive weather site showing a three-day forecast in cards."
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+            <div class="card__body">
+              <h3 class="card__title">Weather Forecast Site</h3>
+              <p>
+                A responsive forecast site using API data with a clean layout optimized for mobile and desktop.
+              </p>
+              <ul class="pill-list" aria-label="Project technologies">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <p class="card__links">
+                <a href="https://example.com" target="_blank" rel="noopener">
+                  Visit the live demo website
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="card__body">
+              <h3 class="card__title">Portfolio Website</h3>
+              <p>
+                This portfolio demonstrates accessible semantic structure, responsive navigation,
+                and form validation.
+              </p>
+              <ul class="pill-list" aria-label="Project technologies">
+                <li>Accessibility</li><li>Responsive CSS</li><li>ARIA</li>
+              </ul>
+              <p class="card__links">
+                <a href="#contact">Contact me about this project</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Skills</h2>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h3 class="card__title">Technical</h3>
+            <ul class="skill-list" role="list">
+              <li role="listitem">
+                <span class="skill-list__name">HTML (Semantic)</span>
+                <span class="skill-list__meta" aria-label="Proficiency: strong">Strong</span>
+              </li>
+              <li role="listitem">
+                <span class="skill-list__name">CSS (Flexbox/Grid, Media Queries)</span>
+                <span class="skill-list__meta" aria-label="Proficiency: strong">Strong</span>
+              </li>
+              <li role="listitem">
+                <span class="skill-list__name">JavaScript (DOM, Validation)</span>
+                <span class="skill-list__meta" aria-label="Proficiency: solid">Solid</span>
+              </li>
+              <li role="listitem">
+                <span class="skill-list__name">SQL (Queries, Reporting)</span>
+                <span class="skill-list__meta" aria-label="Proficiency: strong">Strong</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">Non-Technical</h3>
+            <ul class="skill-list" role="list">
+              <li role="listitem">
+                <span class="skill-list__name">Documentation</span>
+                <span class="skill-list__meta">Clear and thorough</span>
+              </li>
+              <li role="listitem">
+                <span class="skill-list__name">Communication</span>
+                <span class="skill-list__meta">Direct and collaborative</span>
+              </li>
+              <li role="listitem">
+                <span class="skill-list__name">Problem-solving</span>
+                <span class="skill-list__meta">Structured approach</span>
+              </li>
+              <li role="listitem">
+                <span class="skill-list__name">Time management</span>
+                <span class="skill-list__meta">Deadline-driven</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--alt" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <p class="section__intro">
+          Use the form below or reach out using email/social links. All fields are labeled for screen readers.
+        </p>
+
+        <div class="grid grid--2">
+          <form class="card form" id="contactForm" novalidate>
+            <div class="form__field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+              <p class="form__error" id="nameError" role="alert" hidden></p>
+            </div>
+
+            <div class="form__field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <p class="form__error" id="emailError" role="alert" hidden></p>
+            </div>
+
+            <div class="form__field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <p class="form__error" id="messageError" role="alert" hidden></p>
+            </div>
+
+            <button class="button" type="submit">Send Message</button>
+            <p class="form__success" id="formSuccess" role="status" aria-live="polite" hidden></p>
+          </form>
+
+          <aside class="card">
+            <h3 class="card__title">Other ways to reach me</h3>
+            <ul class="contact-list">
+              <li>
+                Email:
+                <a href="mailto:jason@example.com">jason@example.com</a>
+              </li>
+              <li>
+                GitHub:
+                <a href="https://github.com/" target="_blank" rel="noopener">
+                  Jason Cook’s GitHub profile
+                </a>
+              </li>
+              <li>
+                LinkedIn:
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                  Jason Cook’s LinkedIn profile
+                </a>
+              </li>
+            </ul>
+            <p class="small">
+              Tip: Replace the placeholder links and email with your real contact info before submitting.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <hr>
-
-  <footer>
-    <!-- Footer text -->
-    <p>&copy; 2025 Jason Cook</p>
+  <footer class="site-footer">
+    <div class="container footer__content">
+      <p>&copy; <span id="year"></span> Jason Cook. All rights reserved.</p>
+      <a href="#home">Back to top</a>
+    </div>
   </footer>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>
