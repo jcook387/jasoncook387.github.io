@@ -1,331 +1,219 @@
-/* ============================================
-   CUSTOM CSS FOR BOOTSTRAP PORTFOLIO
-   This file adds custom styles on top of Bootstrap
-   
-   STUDENT NOTE: Bootstrap already provides most styles.
-   This file only adds extra customization!
-   ============================================ */
-
-/* ============================================
-   ACCESSIBILITY UTILITIES
-   These help users who rely on keyboards/screen readers
-   ============================================ */
-
-/* Skip link - allows keyboard users to jump straight to content */
 .skip-link {
   position: absolute;
-  top: -40px;  /* Hidden above the page */
+  top: -40px;
   left: 0;
   background: #000;
   color: #fff;
   padding: 8px 16px;
   text-decoration: none;
-  z-index: 9999;  /* Appears above everything else */
+  z-index: 9999;
   font-weight: 600;
 }
 
-/* When user tabs to skip link, it appears */
 .skip-link:focus {
-  top: 0;  /* Move into view */
+  top: 0;
   outline: 3px solid #0066cc;
   outline-offset: 2px;
 }
 
-/* Improved focus indicators for keyboard navigation 
-   :focus-visible only shows outline when using keyboard, not mouse */
 *:focus-visible {
   outline: 3px solid #0066cc;
   outline-offset: 2px;
 }
 
-/* ============================================
-   CSS VARIABLES (Custom Properties)
-   Define colors once, use them everywhere!
-   ============================================ */
 :root {
-  --primary-color: #0066cc;      /* Main blue color */
-  --secondary-color: #1a1a1a;    /* Dark gray for text */
-  --text-color: #333;            /* Body text color */
-  --light-bg: #f8f9fa;           /* Light background */
-  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);        /* Subtle shadow */
-  --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+  --primary-color: #0066cc;
+  --secondary-color: #1a1a1a;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================================
-   TYPOGRAPHY
-   Font styles and colors
-   ============================================ */
 body {
   color: var(--text-color);
-  /* Use system fonts for best performance and native feel */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* All headings use the secondary color */
 h1, h2, h3, h4, h5, h6 {
   color: var(--secondary-color);
 }
 
-/* ============================================
-   NAVIGATION ENHANCEMENTS
-   Extra styling for the navbar
-   ============================================ */
-
-/* Add shadow to header for depth */
 .site-header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar brand (logo area) styling */
 .navbar-brand {
   font-weight: 700;
-  transition: opacity 0.3s ease;  /* Smooth fade effect */
+  transition: opacity 0.3s ease;
 }
 
-/* Fade slightly on hover */
 .navbar-brand:hover,
 .navbar-brand:focus {
   opacity: 0.8;
 }
 
-/* Logo mark with gradient background */
 .logo-mark {
-  background: linear-gradient(135deg, #0066cc, #004c99);  /* Diagonal gradient */
+  background: linear-gradient(135deg, #0066cc, #004c99);
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   font-weight: 900;
   display: inline-block;
 }
 
-/* Navigation links styling */
 .nav-link {
   font-weight: 500;
   transition: color 0.3s ease;
-  position: relative;  /* Needed for the underline effect */
+  position: relative;
 }
 
-/* Animated underline effect for nav links 
-   Uses a pseudo-element (::after) to create the line */
 .nav-link:after {
-  content: '';  /* Required for pseudo-element */
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;  /* Starts with no width */
+  width: 0;
   height: 3px;
   background: var(--primary-color);
-  transition: width 0.3s ease;  /* Animate the width change */
+  transition: width 0.3s ease;
 }
 
-/* On hover/focus/active, expand the underline to full width */
 .nav-link:hover:after,
 .nav-link:focus:after,
 .nav-link.active:after {
   width: 100%;
 }
 
-/* ============================================
-   HERO SECTION
-   The first section visitors see
-   ============================================ */
 .hero-section {
-  /* Diagonal gradient background */
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   display: flex;
-  align-items: center;  /* Center content vertically */
+  align-items: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
-/* Profile image styling */
 .profile-img {
   max-width: 400px;
-  border: 5px solid #fff;  /* White border around image */
+  border: 5px solid #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Zoom in slightly on hover */
 .profile-img:hover {
-  transform: scale(1.05);  /* Grow to 105% */
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;  /* Larger shadow */
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* ============================================
-   BUTTON ENHANCEMENTS
-   Extra styling for Bootstrap buttons
-   ============================================ */
 .btn {
   font-weight: 600;
-  transition: all 0.3s ease;  /* Smooth transitions for all properties */
+  transition: all 0.3s ease;
 }
 
-/* Lift buttons up slightly on hover */
 .btn:hover,
 .btn:focus {
-  transform: translateY(-2px);  /* Move up 2 pixels */
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
 }
 
-/* Push back down when clicked */
 .btn:active {
   transform: translateY(0);
 }
 
-/* Larger buttons have more padding */
 .btn-lg {
   padding: 0.75rem 1.5rem;
 }
 
-/* ============================================
-   CARD ENHANCEMENTS
-   Bootstrap cards with extra effects
-   ============================================ */
 .card {
-  border: none;  /* Remove default border */
+  border: none;
   transition: all 0.3s ease;
 }
 
-/* Cards lift up and get larger shadow on hover */
 .card:hover {
-  transform: translateY(-8px);  /* Move up 8 pixels */
+  transform: translateY(-8px);
   box-shadow: var(--card-hover-shadow) !important;
 }
 
-/* ============================================
-   PROJECT CARD IMAGE FIX
-   THIS IS THE KEY FIX FOR YOUR IMAGE ISSUE!
-   ============================================ */
-
-/* Hide any overflow to prevent layout issues */
 .project-card {
   overflow: hidden;
 }
 
-/* 
-   THE SOLUTION: Fixed height + object-fit
-   - Fixed height (220px) ensures all images same size
-   - object-fit: cover maintains aspect ratio
-   - object-position: center top keeps important content visible
-*/
 .project-card .card-img-top {
   width: 100%;
-  height: 220px;              /* FIXED HEIGHT - all images same! */
-  object-fit: cover;          /* Crop to fit, maintain aspect ratio */
-  object-position: center top; /* Align to top center */
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
   transition: transform 0.3s ease;
 }
 
-/* Zoom image slightly on card hover */
 .project-card:hover .card-img-top {
   transform: scale(1.05);
 }
 
-/* Card body uses flexbox to push content to bottom */
 .project-card .card-body {
   display: flex;
-  flex-direction: column;  /* Stack items vertically */
-  min-height: 280px;       /* Minimum height for consistency */
+  flex-direction: column;
+  min-height: 280px;
 }
 
-/* Badges and button are pushed to bottom automatically */
 .project-card .card-body > div:last-child {
-  margin-top: auto;  /* Pushes this div to bottom */
+  margin-top: auto;
 }
 
-/* ============================================
-   BADGE STYLING
-   Small labels for technologies, skills, etc.
-   ============================================ */
 .badge {
   padding: 0.4em 0.8em;
   font-weight: 500;
   font-size: 0.85rem;
 }
 
-/* ============================================
-   LIST GROUP STYLING
-   For skills lists
-   ============================================ */
 .list-group-item {
-  border-left: none;   /* Remove side borders */
+  border-left: none;
   border-right: none;
   padding: 0.75rem 0;
 }
 
-/* Remove top border from first item */
 .list-group-item:first-child {
   border-top: none;
 }
 
-/* Remove bottom border from last item */
 .list-group-item:last-child {
   border-bottom: none;
 }
 
-/* ============================================
-   FORM ENHANCEMENTS
-   Better form control styling
-   ============================================ */
-
-/* Custom focus state for form inputs */
 .form-control:focus,
 .form-select:focus {
   border-color: var(--primary-color);
-  /* Ring effect around input when focused */
   box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
 }
 
-/* Error message styling (Bootstrap's invalid-feedback) */
 .invalid-feedback {
-  display: none;  /* Hidden by default */
+  display: none;
   font-size: 0.875rem;
-  color: #dc3545;  /* Red color */
+  color: #dc3545;
   margin-top: 0.25rem;
 }
 
-/* Show error message when input is invalid */
 .was-validated .form-control:invalid ~ .invalid-feedback,
 .form-control.is-invalid ~ .invalid-feedback {
   display: block;
 }
 
-/* ============================================
-   FOOTER STYLING
-   Bottom of page styles
-   ============================================ */
 footer a {
   transition: color 0.3s ease;
 }
 
-/* Links change color on hover */
 footer a:hover,
 footer a:focus {
   color: #66b3ff !important;
   text-decoration: underline;
 }
 
-/* ============================================
-   SECTION SPACING
-   Space for sticky navbar
-   ============================================ */
 section {
-  /* When clicking nav links, scroll stops 70px above section
-     This prevents content from hiding under the sticky navbar */
   scroll-margin-top: 70px;
 }
 
-/* ============================================
-   ICON ALIGNMENT
-   Bootstrap icons vertical alignment
-   ============================================ */
 .bi {
   vertical-align: middle;
 }
 
-/* ============================================
-   QUICK FACTS STYLING
-   Definition list in About section
-   ============================================ */
 .card-body dl dt {
   font-weight: 600;
   color: var(--secondary-color);
@@ -335,129 +223,88 @@ section {
   color: #666;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   Different styles for different screen sizes
-   ============================================ */
-
-/* MOBILE PHONES (up to 767px wide) */
 @media (max-width: 767.98px) {
-  /* Hero section adjustments for mobile */
   .hero-section {
-    min-height: auto;  /* Don't force minimum height */
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+   min-height: auto;
+   padding-top: 3rem;
+   padding-bottom: 3rem;
   }
   
-  /* Smaller heading text on mobile */
   .display-4 {
-    font-size: 2rem;
+   font-size: 2rem;
   }
   
   .display-5 {
-    font-size: 1.75rem;
+   font-size: 1.75rem;
   }
   
-  /* Smaller profile image on mobile */
   .profile-img {
-    max-width: 280px;
-    margin: 0 auto;
+   max-width: 280px;
+   margin: 0 auto;
   }
   
-  /* Slightly shorter project images on mobile */
   .project-card .card-img-top {
-    height: 200px;
+   height: 200px;
   }
 }
 
-/* TABLETS (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  /* Taller project images on tablets */
   .project-card .card-img-top {
-    height: 240px;
+   height: 240px;
   }
 }
 
-/* DESKTOP (992px and up) */
 @media (min-width: 992px) {
-  /* Standard project image height on desktop */
   .project-card .card-img-top {
-    height: 220px;
+   height: 220px;
   }
 }
 
-/* ============================================
-   SMOOTH SCROLLING
-   Smooth scroll when clicking nav links
-   ============================================ */
 html {
   scroll-behavior: smooth;
 }
 
-/* ============================================
-   LOADING STATES
-   Disabled elements look different
-   ============================================ */
 .form-control:disabled,
 .btn:disabled {
-  cursor: not-allowed;  /* Show "not allowed" cursor */
-  opacity: 0.6;         /* Make it look faded */
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
-/* ============================================
-   PRINT STYLES
-   How page looks when printed
-   ============================================ */
 @media print {
-  /* Hide navigation, buttons, and footer when printing */
   .navbar,
   .btn,
   footer {
-    display: none;
+   display: none;
   }
   
-  /* Plain background for hero section */
   .hero-section {
-    background: white;
-    min-height: auto;
+   background: white;
+   min-height: auto;
   }
   
-  /* Cards don't need shadows when printed */
   .card {
-    break-inside: avoid;  /* Don't split cards across pages */
-    box-shadow: none !important;
-    border: 1px solid #ddd;
+   break-inside: avoid;
+   box-shadow: none !important;
+   border: 1px solid #ddd;
   }
   
-  /* Show full URLs after links when printed */
   a[href^="http"]:after {
-    content: " (" attr(href) ")";
-    font-size: 10pt;
+   content: " (" attr(href) ")";
+   font-size: 10pt;
   }
 }
 
-/* ============================================
-   REDUCED MOTION SUPPORT
-   Respects users who have motion sensitivity
-   ============================================ */
 @media (prefers-reduced-motion: reduce) {
-  /* Disable animations for users who prefer reduced motion */
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;  /* No smooth scrolling */
+   animation-duration: 0.01ms !important;
+   animation-iteration-count: 1 !important;
+   transition-duration: 0.01ms !important;
+   scroll-behavior: auto !important;
   }
 }
 
-/* ============================================
-   UTILITY CLASSES
-   Reusable helper classes
-   ============================================ */
-
-/* Text with gradient effect */
 .text-gradient {
   background: linear-gradient(135deg, var(--primary-color), #004c99);
   -webkit-background-clip: text;
@@ -465,7 +312,6 @@ html {
   background-clip: text;
 }
 
-/* Custom shadow utilities */
 .shadow-custom {
   box-shadow: var(--card-shadow);
 }
@@ -474,42 +320,34 @@ html {
   box-shadow: var(--card-hover-shadow);
 }
 
-/* ============================================
-   ANIMATION
-   Fade in effect (not currently used)
-   ============================================ */
 .fade-in {
   animation: fadeIn 0.6s ease-in;
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+   opacity: 0;
+   transform: translateY(20px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+   opacity: 1;
+   transform: translateY(0);
   }
 }
 
-/* ============================================
-   CUSTOM SCROLLBAR (Optional)
-   Works in Chrome, Edge, Safari
-   ============================================ */
 ::-webkit-scrollbar {
-  width: 10px;  /* Width of scrollbar */
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;  /* Track (background) color */
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;  /* Thumb (handle) color */
+  background: #888;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;  /* Darker on hover */
+  background: #555;
 }
